@@ -15,6 +15,10 @@
   const timedisplay=document.getElementsByClassName('smooth');
   const res=document.getElementById('result');
   const agait=document.getElementById('against');
+   const again=document.getElementById('playagain');
+   const againi=document.getElementById('playagaini');
+   const next=document.getElementById('next');
+    const wonpage = document.getElementById('wonpage');
 rulebutton.addEventListener('click',()=>
     {
        rules.classList.add('rulescla');
@@ -29,6 +33,28 @@ exit2.addEventListener('click',()=>
        exit.style.opacity=0;
        
     })
+again.addEventListener('click',()=>{
+ location.reload(); 
+
+});
+againi.addEventListener('click',()=>{
+ location.reload(); 
+});
+next.addEventListener('click',()=>{
+    groupi.style.display='none'
+    document.getElementById('tsmain').style.display='none';
+    next.style.display='none';
+    document.getElementById('troffi').style.display='block'
+     document.getElementById('wonpage').style.display='block';
+     again.style.display = 'block';
+   againi.style.display = 'block';
+   playarea.style.display='none'
+})
+
+
+         
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -165,7 +191,9 @@ function result2( x, y)
    if(userid==pcid)
     {
         res.innerText="TIE UP ";
-         against.innerText="AGAINST PC";
+         agait.textContent="AGAINST PC";
+         again.textContent="PLAY AGAIN"
+         again.textContent="PLAY AGAIN"
     }
      else if(userid!=pcid)
     {
@@ -177,7 +205,9 @@ function result2( x, y)
              if (sco1) sco1.textContent = userScore;
              localStorage.setItem("score1", userScore);
              res.innerText="YOU WON";
-             against.innerText="AGAINST PC";
+             agait.textContent="AGAINST PC";
+             again.textContent="PLAY AGAIN"
+             next.style.display='flex';
          
         }
         else if(userid==='sisorout'&&pcid==="paperout")
@@ -186,7 +216,10 @@ function result2( x, y)
               if (sco1) sco1.textContent = userScore;
              localStorage.setItem("score1", userScore);
               res.innerText="YOU WON";
-              against.innerText="AGAINST PC";
+              agait.textContent="AGAINST PC";
+              again.textContent="PLAY AGAIN"
+              next.style.display='flex';
+              
         }
          else if(userid==='paperout'&&pcid==="rockout")
         {
@@ -194,8 +227,10 @@ function result2( x, y)
               if (sco1) sco1.textContent = userScore;
              localStorage.setItem("score1", userScore);
             res.innerText="YOU WON";
-            against.innerText="AGAINST PC";
-           
+            agait.textContent="AGAINST PC";
+            again.textContent="PLAY AGAIN"
+           next.style.display='flex'
+         
         }
          else 
      {
@@ -204,7 +239,8 @@ function result2( x, y)
              if (sco2) sco2.textContent = pcScore;
              localStorage.setItem("score2", pcScore);
        res.innerText="YOU LOSE";
-       agait.innerText="AGAINST PC";
+       agait.textContent="AGAINST PC";
+       again.textContent="PLAY AGAIN"
        
      }
     }
