@@ -868,19 +868,6 @@ section{
     animation-duration: 2.75s;
 }    
      
-.rockout
-{
-  border: #000000 solid 15px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-width: 210px;
-height: 210px;
-gap: 0px;
-opacity: 0px;
-background: #0073b5;
-}
 
 
 
